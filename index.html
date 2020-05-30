@@ -3,29 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Raleway:wght@300;400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>laura-mackew-beyond-bootcamp</title>
 </head>
 <body>
 
-    <header>
+    <header class="wrapper">
         <h1>Behind the Brand</h1>
         <h2>see how your favorate fashion brands measure up ethically</h2>
     </header>
 
-    <main>
+    <main class="wrapper">
 
         <form class="brandSearch" method="get">
-            <label for="search">Search</label>
-            <input type="text" name="search" class="search" placeholder="Enter a Brand Name">
-            <button type="submit">enter</button>
+
+            <div class="inputFlex">
+                <input type="text" name="search" class="search" placeholder="Enter a Brand Name">
+                <ul class="matches"></ul>
+            </div>
+            
+            <button type="submit" class="submit">enter</button>
         </form>
+        
 
         <section class="results">
-
+            <div class="resultsTextBox">
+                <h3>H&M</h3>
+                <p class="overall">overall: B+</p>
+            </div>
+                <ul class="resultsFlex">
+                    <li class="grades">ethics grades</li>
+                    <li>environmental: A+</li>
+                    <li>labor: C-</li>
+                    <li>auditing: B-</li>
+                    <li>transparency: A-</li>
+                    <li>policies: A+</li>
+                </ul>
         </section>
 
     </main>
-    <script src="script.js"></script>
+    <script src="script.js" ></script>
 </body>
 </html>

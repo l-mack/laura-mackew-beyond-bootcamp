@@ -1,4 +1,5 @@
-[{
+
+const data = [{
         "name": "Abercrombie & Fitch",
         "environmental" : "D",
         "labor" : "F",
@@ -188,3 +189,6 @@
         "overall": "B"
     }
 ]
+
+export data;
+
