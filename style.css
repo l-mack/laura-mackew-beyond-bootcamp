@@ -144,6 +144,28 @@ button:hover{
     justify-content: center;
 }
 
+.resultsTextBox{
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.D{
+    transition: background .5s;
+    background-color: #e76f51;
+}
+.C{
+    transition: background .5s;
+    background-color: #f4a261;
+}
+.B{
+    transition: background .5s;
+    background-color: #e9c46a;
+}
+.A{
+    transition: background .5s;
+    background-color: #2a9d8f;
+}
+
 h3{
     font-size: 3rem;
     text-align: center;

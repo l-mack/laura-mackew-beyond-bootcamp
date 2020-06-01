@@ -8,7 +8,7 @@ const companies = [{
     "auditing": "D-",
     "transparency": "D-",
     "policies": "B-",
-    "overall": "D-"
+    "overall": "D"
 },
 {
     "name": "adidas",
@@ -26,7 +26,7 @@ const companies = [{
     "auditing": "D-",
     "transparency": "C-",
     "policies": "A-",
-    "overall": "D+"
+    "overall": "D"
 },
 {
     "name": "Ben Sherman",
@@ -35,7 +35,7 @@ const companies = [{
     "auditing": "C-",
     "transparency": "C-",
     "policies": "A-",
-    "overall": "D+"
+    "overall": "D"
 },
 {
     "name": "Coles",
@@ -44,7 +44,7 @@ const companies = [{
     "auditing": "D",
     "transparency": "C+",
     "policies": "A-",
-    "overall": "D+"
+    "overall": "D"
 },
 {
     "name": "Forever 21",
@@ -53,7 +53,7 @@ const companies = [{
     "auditing": "F",
     "transparency": "F",
     "policies": "C",
-    "overall": "D-"
+    "overall": "D"
 },
 {
     "name": "Fruit of the Loom",
@@ -62,7 +62,7 @@ const companies = [{
     "auditing": "D",
     "transparency": "C",
     "policies": "A",
-    "overall": "D+"
+    "overall": "D"
 },
 {
     "name": "Gap",
@@ -80,7 +80,7 @@ const companies = [{
     "auditing": "B-",
     "transparency": "A-",
     "policies": "A+",
-    "overall": "B+"
+    "overall": "B"
 },
 {
     "name": "Hugo Boss",
@@ -89,7 +89,7 @@ const companies = [{
     "auditing": "C-",
     "transparency": "B+",
     "policies": "A+",
-    "overall": "C+"
+    "overall": "C"
 },
 {
     "name": "Jeanswest",
@@ -98,7 +98,7 @@ const companies = [{
     "auditing": "B+",
     "transparency": "A-",
     "policies": "A+",
-    "overall": "B+"
+    "overall": "B"
 },
 {
     "name": "Lacoste",
@@ -107,7 +107,7 @@ const companies = [{
     "auditing": "D+",
     "transparency": "C-",
     "policies": "A+",
-    "overall": "C-"
+    "overall": "C"
 },
 {
     "name": "Levis",
@@ -125,7 +125,7 @@ const companies = [{
     "auditing": "A+",
     "transparency": "A",
     "policies": "A+",
-    "overall": "A-"
+    "overall": "A"
 },
 {
     "name": "Marks and Spencer",
@@ -134,7 +134,7 @@ const companies = [{
     "auditing": "C",
     "transparency": "A+",
     "policies": "A+",
-    "overall": "B+"
+    "overall": "B"
 },
 {
     "name": "New Balance",
@@ -152,7 +152,7 @@ const companies = [{
     "auditing": "C",
     "transparency": "A-",
     "policies": "A+",
-    "overall": "B-"
+    "overall": "B"
 },
 {
     "name": "Puma",
@@ -170,7 +170,7 @@ const companies = [{
     "auditing": "D+",
     "transparency": "B-",
     "policies": "A+",
-    "overall": "C-"
+    "overall": "C"
 },
 {
     "name": "Rodd & Gunn",
@@ -179,7 +179,7 @@ const companies = [{
     "auditing": "B-",
     "transparency": "A",
     "policies": "A+",
-    "overall": "A-"
+    "overall": "A"
 },
 {
     "name": "Target",
@@ -201,9 +201,15 @@ const matches = document.querySelector('.matches');
 const submit = document.querySelector('.submit');
 const results = document.querySelector('.results');
 
+
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
-submit.addEventListener('click', displayResult);
+submit.addEventListener('click', function (e){
+    e.preventDefault();
+    displayResult();
+    changeBackground();
+});
+
 
 
 // display matches as user types
@@ -220,8 +226,7 @@ function displayMatches() {
 }
 
 //display final search result
-function displayResult(e) {
-    e.preventDefault();
+function displayResult() {
     const resultArray = findMatches(searchInput.value, companies);
     const html = resultArray.map((company, index, array) =>{
         if(array.length < 2){
@@ -248,18 +253,19 @@ function displayResult(e) {
     // find matches function 
     function findMatches (wordToMatch, companies){
         return companies.filter(company =>{
-            //does name match user input
-
+            // does name match user input
             const regex = new RegExp (wordToMatch, 'gi');
             return company.name.match(regex)
         });
     }
-        // takes in wordToMatch and data array
-        //returns a filtered data array
-            // 
-            // if wordToMatch matches brand name in data array
 
-
+    function changeBackground (){
+        const resultArray = findMatches(searchInput.value, companies);
+        const newClass = resultArray.map(company =>{
+            return `${company.overall}`
+        })
+        results.className = `results ${newClass}`;
+    }
 
     // display css styles (background color) depending on company rating (e.g. A+ rating = green background)
 
