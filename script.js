@@ -247,7 +247,6 @@ function displayResult() {
                 <li>auditing: ${company.auditing}</li>
                 <li>transparency: ${company.transparency}</li>
                 <li>policies: ${company.policies}</li>
-            </ul >
             `
         }
     }).join('')
