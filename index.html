@@ -10,58 +10,69 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <title>laura-mackew-beyond-bootcamp</title>
 </head>
+
+
 <body>
-
-    <header class="wrapper">
-        <h1>B  ehind the Brand</h1>
-        <h2>see how your favorate fashion brands measure up ethically</h2>
-    </header>
-
-    <main class="wrapper">
-
-        <form class="brandSearch" method="get">
-
-            <div class="inputFlex">
-                <input type="text" name="search" class="search" placeholder="Enter a Brand Name">
-                <ul class="matches"></ul>
-            </div>
-            
-            <button type="submit" class="submit">enter</button>
-        </form>
+    <!-- start of main grid -->
+    <div class="mainGrid">
+        <header class="wrapper">
+            <h1>Behind the Brand</h1>
+            <h2>see how your favorate fashion brands measure up ethically</h2>
+        </header>
         
-
-        <section class="results">
-            <!-- start of results -->
-            <div class="resultsFlexLrg">
-                <!-- start of resultsFlexLrg -->
-
-                <div class="resultsTextBox">
-                    <h3 id="resultH3">H&M</h3>
-                    <p class="overall">overall: B</p>
+        <main class="wrapper">
+        
+            <form class="brandSearch" method="get">
+        
+                <div class="inputFlex">
+                    <input type="text" name="search" class="search" placeholder="Enter a Brand Name">
+                    <ul class="matches"></ul>
                 </div>
-                <ul class="resultsFlex">
-                    <li class="grades">ethics grades</li>
-                    <li>environmental: A+</li>
-                    <li>labor: C-</li>
-                    <li>auditing: B-</li>
-                    <li>transparency: A-</li>
-                    <li>policies: A+</li>
-                </ul>
-                <!-- end of resultsFlexLrg -->
-            </div>
-            <div class="chartContainer">
-                <h4>Company Grades</h4>
-                <div class="imgDiv">
-                    <img src="./assets/chart2.jpg" alt="pie chart showing the percentatge of each grade">
+        
+                <button type="submit" class="submit">enter</button>
+            </form>
+        
+        
+            <section class="results">
+                <!-- start of results -->
+                <div class="resultsFlexLrg">
+                    <!-- start of resultsFlexLrg -->
+        
+                    <div class="resultsTextBox">
+                        <h3 id="resultH3">H&M</h3>
+                        <p class="overall">overall: B</p>
+                    </div>
+                    <ul class="resultsFlex">
+                        <li class="grades">ethics grades</li>
+                        <li>environmental: A+</li>
+                        <li>labor: C-</li>
+                        <li>auditing: B-</li>
+                        <li>transparency: A-</li>
+                        <li>policies: A+</li>
+                    </ul>
+                    <!-- end of resultsFlexLrg -->
                 </div>
-            </div>
-            
+                <div class="chartContainer">
+                    <h4>Company Grades</h4>
+                    <div class="imgDiv">
+                        <img src="./assets/chart2.jpg" alt="pie chart showing the percentatge of each grade">
+                    </div>
+                </div>
+        
+        
+        
+                <!-- end of results -->
+            </section>
+        
+        </main>
+        <footer>
+            <p class="coded">coded by Laura MacKew 2020</p> 
+            <p class="dataFrom">data from THE TRUTH BEHIND THE BARCODE:  2019 Ethical Fashion Report</p>
+        </footer>
+    
+    <!-- end of main grid -->
+    </div>
 
-         
-            <!-- end of results -->
-        </section>
-
-    </main>
-    <script src="script.js" ></script>
+    <script src="script.js"></script>
 </body>
 </html>
