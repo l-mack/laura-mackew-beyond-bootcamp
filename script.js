@@ -199,7 +199,8 @@ const companies = [{
 const searchInput = document.querySelector('.search');
 const matches = document.querySelector('.matches');
 const submit = document.querySelector('.submit');
-const results = document.querySelector('.results');
+const results1 = document.querySelector('.resultsTextBox');
+const results2 = document.querySelector('.resultsFlex');
 
 
 searchInput.addEventListener('change', displayMatches);
@@ -228,25 +229,29 @@ function displayMatches() {
 //display final search result
 function displayResult() {
     const resultArray = findMatches(searchInput.value, companies);
-    const html = resultArray.map((company, index, array) =>{
+    const html1 = resultArray.map((company, index, array) =>{
         if(array.length < 2){
             return `
-            <div class = "resultsTextBox">
                 <h3>${company.name}</h3>
-                <p class = "overall">${company.overall}</p>
-            </div>
-            <ul class = "resultsFlex">
-                <li class = "grades">ethics grades</li>
+                <p class = "overall">${company.overall}</p>`
+        }
+    }).join('')
+    results1.innerHTML = html1;
+
+    const html2 = resultArray.map((company, index, array) => {
+        if (array.length < 2){
+            return `
+            <li class="grades">ethics grades</li>
                 <li>environmental: ${company.environmental}</li>
                 <li>labor: ${company.labor}</li>
                 <li>auditing: ${company.auditing}</li>
                 <li>transparency: ${company.transparency}</li>
                 <li>policies: ${company.policies}</li>
-            </ul>
+            </ul >
             `
         }
     }).join('')
-    results.innerHTML = html;
+    results2.innerHTML = html2
 }
 
 // compare user input to data array 
@@ -259,18 +264,23 @@ function displayResult() {
         });
     }
 
+    //change background color according to user selection
     function changeBackground (){
         const resultArray = findMatches(searchInput.value, companies);
         const newClass = resultArray.map(company =>{
             return `${company.overall}`
         })
-        results.className = `results ${newClass}`;
+        results1.className = `resultsTextBox ${newClass}`;
     }
 
-    // display css styles (background color) depending on company rating (e.g. A+ rating = green background)
+
+
+
+    //handle errors 
+        //when user enters a not found search
+
 
 //stretch goals
     // move data to DB and connect 
-    // show results as user types 
 
 
